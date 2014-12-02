@@ -10,11 +10,11 @@
     "type": "git",
     "url": "https://github.com/junozero/ntnode"
   },
-    "license": "MIT",
+  "license": "MIT",
   "dependencies": {
     "async": "^0.9.0",
     "express": "~4.9.0",
-	"express-session": "^1.9.2",
+    "express-session": "^1.9.2",
     "mongojs": "^0.17.0",
     "socket.io": "^1.2.1"
   }
