@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/expressjs/session"
+    "url": "https://github.com/junozero/ntnode"
   },
     "license": "MIT",
   "dependencies": {
