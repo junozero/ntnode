@@ -1,5 +1,5 @@
 #NTNODE
-这是一个快速的，整体的WEB框架，但它主要面向的是**前端攻城师**，我们关注的是**public目录**下的快速开发。**但它是不安全的，它寻求的是提供快速和高效搭建web app所需的服务端框架。**
+这是一个快速的，整体的WEB框架，但它主要面向的是**前端攻城师**，我们关注的是**public目录**下的快速开发。**但它是不安全的（没有安全验证、拦截、传输加密等），它寻求的是提供快速和高效搭建web app所需的服务端框架。**
 
 **目前仅支持windows平台，其它平台如需使用请自行替换对应操作系统版本的mongodb**
 
@@ -141,6 +141,22 @@ public/index.html，作为前端工程师，我们只需要关注public目录。
             });
         }
 
+        function page() {
+            var json = {
+                tablename: 'syuser',
+                pagenum: 1,
+                pagesize: 20,
+                sort: { name: 1 }
+            };
+            service('/base/page', json, function(json) {
+                if(json.success) {
+                    alert(JSON.stringify(json.data));
+                } else {
+                    alert('查询失败！错误原因：' + json.error);
+                }
+            });
+        }
+
         function service(url, data, callback) {
             $.ajax({
                 dataType: 'json',
@@ -160,6 +176,7 @@ public/index.html，作为前端工程师，我们只需要关注public目录。
     <button onclick="mod()">修改</button>
     <button onclick="del()">删除</button>
     <button onclick="list()">列表</button>
+    <button onclick="page()">分页排序</button>
 </body>
 </html>
 ```
@@ -261,6 +278,26 @@ function list() {
         tablename: 'syuser'
     };
     service('/base/list', json, function(json) {
+        if(json.success) {
+            alert(JSON.stringify(json.data));
+        } else {
+            alert('查询失败！错误原因：' + json.error);
+        }
+    });
+}
+```
+
+###获取page
+URL：/base/page
+```
+function page() {
+    var json = {
+        tablename: 'syuser',
+        pagenum: 1,
+        pagesize: 20,
+        sort: { name: 1 }
+    };
+    service('/base/page', json, function(json) {
         if(json.success) {
             alert(JSON.stringify(json.data));
         } else {
