@@ -1,9 +1,22 @@
-#NTNODE
+#NTNODE（已过时）
 **注意：NTNODE由于存在较大的缺陷，并且定位不准确，目前已废弃，不再维护，针对NTNODE存在的问题和对其进行重新定位后，TNODE已更名为YISITE**
 
 
 YISITE GIT：https://github.com/junozero/yisite
 
+'
+'
+'
+'
+'
+'
+'
+'
+'
+'
+'
+'
+'
 
 这是一个快速的，整体的WEB框架，但它主要面向的是**前端攻城师**，我们关注的是**public目录**下的快速开发。**但它是不安全的（没有安全验证、拦截、传输加密等），它寻求的是提供快速和高效搭建web app所需的服务端框架。**
 
@@ -45,7 +58,7 @@ public/index.html
     <title>Hello Word</title>
 </head>
 <body>
-	Hello NTNODE
+  Hello NTNODE
 </body>
 </html>
 ```
@@ -53,8 +66,8 @@ public/index.html
 ###app.js
 ```
 var appname = 'ntnode',
-	port = 80,
-	ntnode = require('ntnode')(appname, port);
+  port = 80,
+  ntnode = require('ntnode')(appname, port);
 
 ntnode.start(function() {
     console.log('Server listening on port ' + port);
